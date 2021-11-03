@@ -1,0 +1,27 @@
+@media(max-width: 450px) {
+  .users__info{
+    display: flex;
+    justify-content: center;
+    .img__info{
+      display: block;
+      height: 150px;
+      width: 150px;
+      object-fit: cover;
+     }
+  }
+
+}
+
+@media(max-width: 330px) {
+  .users__info{
+    display: flex;
+    justify-content: center;
+    .img__info{
+      display: block;
+      height: 110px;
+      width: 110px;
+      object-fit: cover;
+     }
+  }
+
+}

@@ -1,0 +1,67 @@
+.watch__bg{
+    background-color: rgb(103, 150, 103);
+    .box__card{
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);;
+    }
+    .content__info{
+     height: 100vh;
+    }
+    input{
+        border-radius: 0.7rem;
+        outline-color: none !important;
+        box-shadow: none !important;
+    }
+    .add__btn{
+        background-color:rgb(192, 35, 61);
+        border-radius: 0.5rem;
+        outline-color: none !important;
+        box-shadow: none !important;
+        border: none;
+        width: 90px;
+        &:hover{
+            background-color:rgb(143, 29, 48) ;
+        }
+    }
+
+    .clear__btn{
+        background-color:rgb(192, 35, 61);
+        border-radius: 0.5rem;
+        outline-color: none !important;
+        box-shadow: none !important;
+        border: none;
+        width: 90px;
+        &:hover{
+            background-color:rgb(143, 29, 48) ;
+        }
+    };
+    .edit__btn{
+        background-color:rgb(103, 150, 103); 
+        border-radius: 0.5rem;
+        outline-color: none !important;
+        box-shadow: none !important;
+        border: none;
+        width: 90px;
+        &:hover{
+            background-color: rgb(56, 129, 56); ;
+        }
+    }
+    .delete__btn{
+        background-color: rgb(185, 62, 18);
+        border-radius: 0.5rem;
+        outline-color: none !important;
+        box-shadow: none !important;
+        border: none;
+        width: 90px;
+        &:hover{
+            background-color: rgb(124, 41, 10);
+        }
+    }
+    .icon__box{
+        color: rgb(124, 41, 10);
+        cursor: pointer;
+    }
+     .complete{
+        text-decoration: line-through;
+        color:rgb(56, 129, 56)
+     }
+}

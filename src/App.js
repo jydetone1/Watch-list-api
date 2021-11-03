@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Characters from './components/characters/Characters';
+import Header from './components/navigation/Header';
+import Episodes from "./components/episodes/Episodes";
+import Locations from "./components/locations/Locations";
+import CharacterInfo from "./components/characters/CharacterInfo";
+import WatchListContextProvider from "./contexts/WatchListContext";
+import WatchForm from "./components/watchlist/WatchForm";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <WatchListContextProvider>
+      <Router>
+        <Switch>
+          <Route path ="/watchlist">
+              <Header/>
+              <WatchForm/>
+            </Route>
+        <Route path ="/location">
+            <Header/>
+            <Locations/>
+          </Route>
+        <Route path ="/episode">
+            <Header/>
+            <Episodes/>
+          </Route>
+          <Route path ="/characters/:id">
+            <Header/>
+             <CharacterInfo/>
+          </Route>
+          <Route path ="/">
+            <Header/>
+            <Characters/>
+          </Route>
+        </Switch>
+      </Router>
+      </WatchListContextProvider>
     </div>
   );
 }
