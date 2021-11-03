@@ -35,7 +35,7 @@ const WatchForm = () => {
             <div className="d-flex justify-content-center align-items-center content__info">
                 <div className="card w-75 bg-dark box__card">
                     <div className="card-body">
-                        <h6 className="card-subtitle mb-2 display-6 text-center text-white">Watch-List</h6>
+                        <h6 className="card-subtitle mb-2 display-6 text-center text-white">My Watch List</h6>
                             <form onSubmit={handleSubmit}>
                                <div className="mt-5">
                                  <input 

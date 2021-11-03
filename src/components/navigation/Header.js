@@ -15,16 +15,16 @@ const Header = () => {
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
-                                <Link to = "/" className="nav-link" >Character</Link>
+                                <Link to = "/" className="nav-link" >Characters</Link>
                                 </li>
                                 <li className="nav-item">
-                                <Link to ="/location" className="nav-link">Location</Link>
+                                <Link to ="/location" className="nav-link">Episodes</Link>
                                 </li>
                                 <li className="nav-item">
-                                <Link to ="/episode" className="nav-link">Episode</Link>
+                                <Link to ="/episode" className="nav-link">Locations</Link>
                                 </li>
                                 <li className="nav-item">
-                                <Link to ="watchlist" className="nav-link">Watch-List</Link>
+                                <Link to ="watchlist" className="nav-link">My Watch list</Link>
                                 </li>
                             </ul>
                         </div>
