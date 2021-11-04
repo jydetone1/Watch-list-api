@@ -6,12 +6,11 @@ import Locations from "./components/locations/Locations";
 import CharacterInfo from "./components/characters/CharacterInfo";
 import WatchListContextProvider from "./contexts/WatchListContext";
 import WatchForm from "./components/watchlist/WatchForm";
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
     <div className="App">
-       <WatchListContextProvider>
+      <WatchListContextProvider>
       <Router>
         <Switch>
           <Route path ="/watchlist">
@@ -36,7 +35,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      </WatchListContextProvider>
+     </WatchListContextProvider>
     </div>
   );
 }
