@@ -49,7 +49,7 @@ const WatchForm = () => {
                                 </div>
                                 <div className="mt-3 d-flex justify-content-center align-items-center">
                                    <button type="submit" className="btn btn-primary add__btn m-3">{editItem? 'Edit list' : 'Add list'}</button>
-                                   <button onClick ={clearWatchList} className="btn btn-secondary clear__btn">clear</button>
+                                   <button onClick ={clearWatchList} className="btn btn-secondary clear__btn">Clear</button>
                                 </div>
                             </form>
                             <WatchList/>
