@@ -22,7 +22,7 @@ const CharacterInfo = () => {
     return (
        <>
         <div className="container mt-4">
-          <span className="d-flex mb-4 justify-content-start"><Link to= "/characters">Back</Link></span>
+          <span className="d-flex mb-4 justify-content-start"><Link to= "/">Back</Link></span>
           <h2 className="mb-3 text-center">Characters Information</h2>
           <div className="card-body d-flex justify-content-center users__info">
              <img className ="img-fluid img__info"src={image} alt={name}/>
