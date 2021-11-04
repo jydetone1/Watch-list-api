@@ -18,10 +18,10 @@ const Header = () => {
                                 <Link to = "/" className="nav-link" >Characters</Link>
                                 </li>
                                 <li className="nav-item">
-                                <Link to ="/location" className="nav-link">Episodes</Link>
+                                <Link to ="/episode" className="nav-link">Episodes</Link>
                                 </li>
                                 <li className="nav-item">
-                                <Link to ="/episode" className="nav-link">Locations</Link>
+                                <Link to ="/location" className="nav-link">Locations</Link>
                                 </li>
                                 <li className="nav-item">
                                 <Link to ="watchlist" className="nav-link">My Watch List</Link>
