@@ -20,7 +20,7 @@ const WatchListContextProvider=({children})=> {
     }
 
     const removeWatchList = (id) =>{
-        setWatchLists(watchlists.filter(task=>task.id !==id))
+        setWatchLists(watchlists.filter(watch=>watch.id !==id))
     }
 
     const clearWatchList = () => {
