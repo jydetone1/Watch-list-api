@@ -41,9 +41,9 @@ const Locations = ()=> {
                  <thead className="table-dark">
                     <tr>
                     <th scope="col">#</th>
-                    <th scope="col">name</th>
-                    <th scope="col">type</th>
-                    <th scope="col">dimension</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Dimension</th>
                     </tr>
                  </thead>
                 <tbody>

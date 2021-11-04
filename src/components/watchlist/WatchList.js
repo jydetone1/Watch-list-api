@@ -13,7 +13,7 @@ const WatchList = () => {
                  })}
              </ul>
           ):(
-              <span className="text-white d-flex justify-content-center"> No Watch lists</span>
+              <span className="text-white d-flex justify-content-center"> No Watch Lists</span>
           )} 
         </div>
     )

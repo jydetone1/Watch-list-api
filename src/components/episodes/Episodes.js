@@ -43,9 +43,9 @@ function Episodes() {
                     <thead className="table-dark">
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">name</th>
-                        <th scope="col">air_date</th>
-                        <th scope="col">episode</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Air_Date</th>
+                        <th scope="col">Episode</th>
                     </tr>
                     </thead>
                     <tbody>
