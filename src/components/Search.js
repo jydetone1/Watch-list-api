@@ -9,9 +9,9 @@ export const Search = ({ setFilter }) => {
   return (
     <div>
       <section className='mb-5'>
-        <form className='d-flex'>
+        <form className='d-block mx-auto w-75'>
           <input
-            className='form-control me-2'
+            className='form-control'
             type='text'
             placeholder='Search...'
             aria-label='Search'
