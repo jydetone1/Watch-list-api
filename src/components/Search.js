@@ -8,17 +8,15 @@ export const Search = ({ setFilter }) => {
 
   return (
     <div>
-      <section className='mb-5'>
-        <form className='d-block mx-auto w-75'>
-          <input
-            className='form-control'
-            type='text'
-            placeholder='Search...'
-            aria-label='Search'
-            onChange={handleInput}
-          />
-        </form>
-      </section>
+      <form className='d-block mx-auto w-75'>
+        <input
+          className='form-control'
+          type='text'
+          placeholder='Search...'
+          aria-label='Search'
+          onChange={handleInput}
+        />
+      </form>
     </div>
   );
 };

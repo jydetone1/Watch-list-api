@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Pagination from '../Pagination';
+import PaginationBox from '../PaginationBox';
 import { Search } from '../Search';
 import { useHistory } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
@@ -22,12 +22,9 @@ const Characters = () => {
       .catch((error) => console.log(error));
   };
 
-  const onPrevious = () => {
-    movieCharacters(info.prev);
-  };
-
-  const onNext = () => {
-    movieCharacters(info.next);
+  const filterPage = (page) => {
+    const pageQuery = `${initialUrl}/?page=${page}`;
+    movieCharacters(pageQuery);
   };
 
   useEffect(() => {
@@ -36,7 +33,7 @@ const Characters = () => {
 
   return (
     <div>
-      <div className='m-5'>
+      <div className='container my-5'>
         <Search filter={filter} setFilter={setFilter} />
         <div className='row'>
           {characters
@@ -54,7 +51,7 @@ const Characters = () => {
               return false;
             })
             .map((item) => (
-              <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 mb-3'>
+              <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 mt-4'>
                 <div className='card'>
                   <img src={item.image} alt={item.name} />
                   <div className='card-body'>
@@ -70,12 +67,7 @@ const Characters = () => {
               </div>
             ))}
         </div>
-        <Pagination
-          prev={info.prev}
-          next={info.next}
-          onPrevious={onPrevious}
-          onNext={onNext}
-        />
+        <PaginationBox info={info} filterPage={filterPage} />
       </div>
     </div>
   );

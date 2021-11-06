@@ -6,7 +6,6 @@ import Locations from './components/locations/Locations';
 import CharacterInfo from './components/characters/CharacterInfo';
 import WatchListContextProvider from './contexts/WatchListContext';
 import WatchForm from './components/watchlist/WatchForm';
-import './index.scss';
 
 function App() {
   return (

@@ -7,12 +7,11 @@ const WatchListContextProvider = ({ children }) => {
   const initialState = JSON.parse(localStorage.getItem('watchLists')) || [];
 
   const [watchlists, setWatchLists] = useState(initialState);
+  const [editItem, setEditItem] = useState(null);
 
   useEffect(() => {
     localStorage.setItem('watchLists', JSON.stringify(watchlists));
   }, [watchlists]);
-
-  const [editItem, setEditItem] = useState(null);
 
   const addWatchList = (title) => {
     setWatchLists([...watchlists, { title, id: uuidv4(), completed: false }]);

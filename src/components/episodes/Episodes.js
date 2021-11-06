@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Pagination from '../Pagination';
+import PaginationBox from '../PaginationBox';
 import { Search } from '../Search';
 
 function Episodes() {
@@ -19,12 +19,9 @@ function Episodes() {
       .catch((error) => console.log(error));
   };
 
-  const onPrevious = () => {
-    episodeList(info.prev);
-  };
-
-  const onNext = () => {
-    episodeList(info.next);
+  const filterPage = (page) => {
+    const pageQuery = `${initialUrl}/?page=${page}`;
+    episodeList(pageQuery);
   };
 
   useEffect(() => {
@@ -33,11 +30,11 @@ function Episodes() {
 
   return (
     <div>
-      <div className='container mt-5'>
+      <div className='my-5'>
         <Search filter={filter} setFilter={setFilter} />
         <div className='table-responsive'>
           <table className='table table-striped caption-top'>
-            <caption>List of episodes</caption>
+            <caption className='text-center mt-2'>List of episodes</caption>
             <thead className='table-dark'>
               <tr>
                 <th scope='col'>#</th>
@@ -70,12 +67,7 @@ function Episodes() {
             </tbody>
           </table>
         </div>
-        <Pagination
-          prev={info.prev}
-          next={info.next}
-          onPrevious={onPrevious}
-          onNext={onNext}
-        />
+        <PaginationBox info={info} filterPage={filterPage} />
       </div>
     </div>
   );

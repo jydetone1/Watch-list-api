@@ -7,15 +7,20 @@ const WatchForm = () => {
   const { addWatchList, clearWatchList, editWatchList, editItem } =
     useContext(WatchListContext);
   const [title, setTitle] = useState('');
+  const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!editItem) {
+    if (title.length < 5) {
+      setError('Write watch list and at least 5 words is required!');
+      return false;
+    } else if (!editItem) {
       addWatchList(title);
       setTitle('');
     } else {
       editWatchList(title, editItem.id, editItem.completed);
     }
+    setError(null);
   };
 
   const handleChange = (e) => {
@@ -47,8 +52,10 @@ const WatchForm = () => {
                     placeholder='watchlist'
                     value={title}
                     onChange={handleChange}
-                    required
                   />
+                  {error && (
+                    <small className='form-text text-danger'>{error}</small>
+                  )}
                 </div>
                 <div className='mt-3 d-flex justify-content-center align-items-center'>
                   <button
