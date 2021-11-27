@@ -1,26 +1,24 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { WatchListContext } from '../../contexts/WatchListContext';
 import WatchList from './WatchList';
+import Alert from './Alert';
 import './Watch.scss';
 
 const WatchForm = () => {
-  const { addWatchList, clearWatchList, editWatchList, editItem } =
+  const { addWatchList, editWatchList, showAlert, alert, editItem } =
     useContext(WatchListContext);
   const [title, setTitle] = useState('');
-  const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (title.length < 5) {
-      setError('Write watch list and at least 5 words is required!');
-      return false;
+    if (!title) {
+      showAlert(true, 'danger', 'please enter a value');
     } else if (!editItem) {
       addWatchList(title);
       setTitle('');
     } else {
       editWatchList(title, editItem.id, editItem.completed);
     }
-    setError(null);
   };
 
   const handleChange = (e) => {
@@ -45,6 +43,7 @@ const WatchForm = () => {
                 My Watch List
               </h6>
               <form onSubmit={handleSubmit}>
+                {alert.show && <Alert />}
                 <div className='mt-5'>
                   <input
                     type='text'
@@ -53,22 +52,10 @@ const WatchForm = () => {
                     value={title}
                     onChange={handleChange}
                   />
-                  {error && (
-                    <small className='form-text text-danger'>{error}</small>
-                  )}
                 </div>
                 <div className='mt-3 d-flex justify-content-center align-items-center'>
-                  <button
-                    type='submit'
-                    className='btn btn-primary add__btn m-3'
-                  >
+                  <button type='submit' className='btn add__btn m-3'>
                     {editItem ? 'Edit list' : 'Add list'}
-                  </button>
-                  <button
-                    onClick={clearWatchList}
-                    className='btn btn-secondary clear__btn'
-                  >
-                    Clear
                   </button>
                 </div>
               </form>

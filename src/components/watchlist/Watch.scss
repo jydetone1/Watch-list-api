@@ -13,6 +13,7 @@
   }
   .add__btn {
     background-color: rgb(192, 35, 61);
+    color: #ffffff;
     border-radius: 0.5rem;
     outline-color: none !important;
     box-shadow: none !important;
@@ -20,11 +21,12 @@
     width: 90px;
     &:hover {
       background-color: rgb(143, 29, 48);
+      color: #ffffff;
     }
   }
-
   .clear__btn {
     background-color: rgb(192, 35, 61);
+    color: #ffffff;
     border-radius: 0.5rem;
     outline-color: none !important;
     box-shadow: none !important;
@@ -32,10 +34,12 @@
     width: 90px;
     &:hover {
       background-color: rgb(143, 29, 48);
+      color: #ffffff;
     }
   }
   .edit__btn {
     background-color: rgb(103, 150, 103);
+    color: #ffffff;
     border-radius: 0.5rem;
     outline-color: none !important;
     box-shadow: none !important;
@@ -43,10 +47,12 @@
     width: 90px;
     &:hover {
       background-color: rgb(56, 129, 56);
+      color: #ffffff;
     }
   }
   .delete__btn {
     background-color: rgb(185, 62, 18);
+    color: #ffffff;
     border-radius: 0.5rem;
     outline-color: none !important;
     box-shadow: none !important;
@@ -54,6 +60,7 @@
     width: 90px;
     &:hover {
       background-color: rgb(124, 41, 10);
+      color: #ffffff;
     }
   }
   .icon__box {
@@ -63,5 +70,11 @@
   .complete {
     text-decoration: line-through;
     color: rgb(56, 129, 56);
+  }
+  .alert {
+    margin-bottom: 1px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 15px;
   }
 }

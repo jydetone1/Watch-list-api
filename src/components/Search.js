@@ -1,9 +1,9 @@
 import React from 'react';
 import './Search.scss';
 
-export const Search = ({ setFilter }) => {
+export const Search = ({ setSearch }) => {
   const handleInput = (e) => {
-    setFilter(e.target.value);
+    setSearch(e.target.value);
   };
 
   return (

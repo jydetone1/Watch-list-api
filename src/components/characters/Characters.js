@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap';
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
   const [info, setInfo] = useState([]);
-  const [filter, setFilter] = useState('');
+  const [search, setSearch] = useState('');
 
   const history = useHistory();
   const initialUrl = 'https://rickandmortyapi.com/api/character';
@@ -29,22 +29,22 @@ const Characters = () => {
 
   useEffect(() => {
     movieCharacters(initialUrl);
-  }, [filter]);
+  }, [search]);
 
   return (
     <div>
       <div className='container my-5'>
-        <Search filter={filter} setFilter={setFilter} />
+        <Search setSearch={setSearch} />
         <div className='row'>
           {characters
             .filter((value) => {
-              if (filter === '') {
+              if (search === '') {
                 return value;
               } else if (
-                value.name.toLowerCase().includes(filter.toLowerCase()) ||
-                value.species.toLowerCase().includes(filter.toLowerCase()) ||
-                value.status.toLowerCase().includes(filter.toLowerCase()) ||
-                value.gender.toLowerCase().includes(filter.toLowerCase())
+                value.name.toLowerCase().includes(search.toLowerCase()) ||
+                value.species.toLowerCase().includes(search.toLowerCase()) ||
+                value.status.toLowerCase().includes(search.toLowerCase()) ||
+                value.gender.toLowerCase().includes(search.toLowerCase())
               ) {
                 return value;
               }

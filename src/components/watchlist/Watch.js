@@ -20,14 +20,14 @@ const Watch = ({ watch }) => {
         <button
           onClick={() => findWatchList(watch.id)}
           type='submit'
-          className='btn btn-primary edit__btn m-3'
+          className='btn edit__btn m-3'
         >
           Edit
         </button>
         <button
           onClick={() => removeWatchList(watch.id)}
           type='submit'
-          className='btn btn-secondary delete__btn'
+          className='btn delete__btn'
         >
           Delete
         </button>

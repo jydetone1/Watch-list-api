@@ -8,20 +8,24 @@ const WatchListContextProvider = ({ children }) => {
 
   const [watchlists, setWatchLists] = useState(initialState);
   const [editItem, setEditItem] = useState(null);
+  const [alert, setAlert] = useState({ show: false, type: '', message: '' });
 
   useEffect(() => {
     localStorage.setItem('watchLists', JSON.stringify(watchlists));
   }, [watchlists]);
 
   const addWatchList = (title) => {
+    showAlert(true, 'success', 'item added to the list');
     setWatchLists([...watchlists, { title, id: uuidv4(), completed: false }]);
   };
 
   const removeWatchList = (id) => {
+    showAlert(true, 'danger', 'item removed');
     setWatchLists(watchlists.filter((watch) => watch.id !== id));
   };
 
   const clearWatchList = () => {
+    showAlert(true, 'danger', 'empty list');
     setWatchLists([]);
   };
 
@@ -36,6 +40,7 @@ const WatchListContextProvider = ({ children }) => {
     );
     setWatchLists(newWatchLists);
     setEditItem(null);
+    showAlert(true, 'success', 'value changed');
   };
 
   const watchCompleted = (watch) => {
@@ -48,6 +53,10 @@ const WatchListContextProvider = ({ children }) => {
       })
     );
   };
+
+  const showAlert = (show = false, type = '', message = '') => {
+    setAlert({ show, type, message });
+  };
   return (
     <WatchListContext.Provider
       value={{
@@ -58,6 +67,8 @@ const WatchListContextProvider = ({ children }) => {
         findWatchList,
         editWatchList,
         watchCompleted,
+        showAlert,
+        alert,
         editItem,
       }}
     >

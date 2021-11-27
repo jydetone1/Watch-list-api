@@ -3,7 +3,7 @@ import { WatchListContext } from '../../contexts/WatchListContext';
 import Watch from './Watch';
 
 const WatchList = () => {
-  const { watchlists } = useContext(WatchListContext);
+  const { watchlists, clearWatchList } = useContext(WatchListContext);
   return (
     <div>
       {watchlists.length ? (
@@ -11,6 +11,12 @@ const WatchList = () => {
           {watchlists.map((watch) => {
             return <Watch watch={watch} key={watch.id} />;
           })}
+          <button
+            onClick={clearWatchList}
+            className='btn clear__btn  mt-3 d-blocl m-auto'
+          >
+            Clear
+          </button>
         </ul>
       ) : (
         <span className='text-white d-flex justify-content-center'>

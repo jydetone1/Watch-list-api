@@ -5,7 +5,7 @@ import { Search } from '../Search';
 const Locations = () => {
   const [location, setlocations] = useState([]);
   const [info, setInfo] = useState([]);
-  const [filter, setFilter] = useState('');
+  const [search, setSearch] = useState('');
 
   const initialUrl = 'https://rickandmortyapi.com/api/location';
 
@@ -26,12 +26,12 @@ const Locations = () => {
 
   useEffect(() => {
     locationList(initialUrl);
-  }, [filter]);
+  }, [search]);
 
   return (
     <div>
       <div className='my-5'>
-        <Search filter={filter} setFilter={setFilter} />
+        <Search setSearch={setSearch} />
         <div className='table-responsive'>
           <table className='table table-striped caption-top'>
             <caption className='text-center mt-2'>List of locations</caption>
@@ -46,12 +46,12 @@ const Locations = () => {
             <tbody>
               {location
                 .filter((value) => {
-                  if (filter === '') {
+                  if (search === '') {
                     return value;
                   } else if (
-                    value.name.toLowerCase().includes(filter.toLowerCase()) ||
-                    value.type.toLowerCase().includes(filter.toLowerCase()) ||
-                    value.dimension.toLowerCase().includes(filter.toLowerCase())
+                    value.name.toLowerCase().includes(search.toLowerCase()) ||
+                    value.type.toLowerCase().includes(search.toLowerCase()) ||
+                    value.dimension.toLowerCase().includes(search.toLowerCase())
                   ) {
                     return value;
                   }
