@@ -48,7 +48,7 @@ const WatchForm = () => {
                   <input
                     type='text'
                     className='form-control'
-                    placeholder='watchlist'
+                    placeholder='watchlist...'
                     value={title}
                     onChange={handleChange}
                   />

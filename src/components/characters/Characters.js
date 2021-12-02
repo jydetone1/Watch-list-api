@@ -31,9 +31,12 @@ const Characters = () => {
     movieCharacters(initialUrl);
   }, [search]);
 
+  if (characters.length < 1) {
+    return <h2 className='section-title'>no search</h2>;
+  }
   return (
-    <div>
-      <div className='container my-5'>
+    <section className='character__bg'>
+      <div className='container py-5'>
         <Search setSearch={setSearch} />
         <div className='row'>
           {characters
@@ -51,13 +54,12 @@ const Characters = () => {
               return false;
             })
             .map((item) => (
-              <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 mt-4'>
+              <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 mb-4'>
                 <div className='card'>
                   <img src={item.image} alt={item.name} />
                   <div className='card-body'>
-                    <p className='card-title text-center'>{item.name}</p>
+                    <p className='card-title'>{item.name}</p>
                     <span
-                      className='d-flex justify-content-center'
                       onClick={() => history.push(`/characters/${item.id}`)}
                     >
                       <Button variant='success'>More Info</Button>
@@ -66,10 +68,10 @@ const Characters = () => {
                 </div>
               </div>
             ))}
+          <PaginationBox info={info} filterPage={filterPage} />
         </div>
-        <PaginationBox info={info} filterPage={filterPage} />
       </div>
-    </div>
+    </section>
   );
 };
 

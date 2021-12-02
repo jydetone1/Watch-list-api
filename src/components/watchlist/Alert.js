@@ -8,7 +8,7 @@ const Alert = () => {
       showAlert();
     }, 3000);
     return () => clearTimeout(timeout);
-  }, [watchlists]);
+  }, [watchlists, showAlert]);
   return (
     <p
       className={`alert alert-${alert.type} text-center d-block m-auto col-md-4`}
